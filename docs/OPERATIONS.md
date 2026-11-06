@@ -45,6 +45,12 @@ Restore drill: restore into an isolated environment with outbound notifications/
 | Failed deployment | Halt rollout, assess schema compatibility, recover from documented backup when required |
 | Provider outage | Show pending/unavailable, retain events, use reconciliation; no fabricated confirmation |
 
+## Document converter and growth
+
+Run DOCX-to-PDF processing in a restricted self-hosted converter with pinned fonts, network/file isolation, CPU/memory/time limits and job-specific temporary profiles. Monitor failed jobs and artifact validation, clean temporary files, and back up school-approved template versions/manifests. Isolate heavy report queues from attendance alerts. See REPORT-CARDS.
+
+Before multiple app nodes, provide shared private storage, bounded database pools, session/config consistency and correct cross-instance event fanout. SCALE defines staged growth; the initial VPS is not a million-concurrent-user claim.
+
 ## Capacity and maintenance
 
 Measure concurrent users, SSE connections, upload sizes, report generation CPU and database growth before promising capacity. Schedule reports/scans with bounded concurrency. Recheck dependency security regularly. Document credential rotation, staff access review and certificate renewal tests. Upgrade one supported layer at a time with staging evidence. Multi-instance deployment later requires shared private storage, cache/version coordination, compatible sessions and cross-instance durable event delivery.

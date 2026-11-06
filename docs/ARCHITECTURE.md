@@ -51,6 +51,12 @@ Default private student/finance queries to uncached responses. Never place authe
 
 Store uploads with generated identifiers, school ownership, content hash, MIME, size and scan status. All preview/download routes enforce current access. Use a storage interface so local disk can later migrate to self-hosted or external S3-compatible storage. No public bucket or `public/uploads` for student material.
 
+## Report generation and scale boundaries
+
+School-approved external DOCX templates are populated from immutable result snapshots and converted to print PDF by an isolated self-hosted converter. Bulk generation is a durable, bounded worker workload with school quotas, manifests and partial-failure handling. See REPORT-CARDS; no browser report designer or hosted document API is required.
+
+SCALE defines the millions-of-students goal and the measured path beyond one VPS: bounded queries/pools, partition/retention plans, shared storage before multiple app nodes, cross-instance event fanout, recovery targets and eventual tenant placement. Current code has no demonstrated large-scale capacity. Read SCALE before introducing instance-local state or unbounded schoolwide work.
+
 ## Decision sources
 
 Consult current official versions when implementing:

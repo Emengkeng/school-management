@@ -63,10 +63,11 @@ Failure: prevent unrelated guardians seeing one another's child-specific informa
 3. Teachers enter scoped draft marks; distinguish zero from missing and absent.
 4. Validate range, duplicates and completeness; submit for review.
 5. Reviewer returns with reasons or approves. Prevent approval from mutating mark inputs unnoticed.
-6. Authorised publisher freezes a report snapshot and generates a printable artifact.
-7. Publish to permitted students/guardians; draft URLs remain inaccessible.
-8. A correction reopens a controlled revision, recalculates with an explicit policy version, reapproves and republishes a linked snapshot.
-Failure: failed PDF generation does not mark a report ready. No partial cohort publication without explicit policy. A student changing class/name later does not rewrite old reports. Verify long names, French accents, multi-page reports and print layout visually.
+6. Select the school-approved external template version, validate required fields, and freeze approved result snapshots. An authorised class head may enter marks across assigned subjects only with explicit permission.
+7. Staff request an idempotent class/cohort batch; bounded workers fill templates and generate individual DOCX/PDF, a ZIP and optionally a merged print PDF. Show progress and failed students; export readiness is separate from publication.
+8. Publish reviewed artifacts to permitted students/guardians; draft URLs and class archives remain inaccessible to parents.
+9. A correction reopens a controlled revision, recalculates with an explicit policy version, reapproves and republishes a linked snapshot.
+Failure: failed PDF generation does not mark a report ready. No partial cohort publication without explicit policy. A student changing class/name later does not rewrite old reports. Verify long names, French accents, multi-page reports and print layout visually. School supplies/designs its template externally; follow REPORT-CARDS for onboarding, approval, bulk failure handling and format limits.
 
 ## W08 Fees and manual payments
 1. Finance sets effective fee schedule and individual scholarships/waivers with approval reasons.

@@ -6,7 +6,7 @@ All steps below are planned, not completed. Dependencies are mandatory; numberin
 
 Dependencies: none. Inspect actual branches and asset rights. Establish supported Next.js/React/Node versions, TypeScript checks, formatting/linting, test harness, PostgreSQL local setup, Drizzle migrations and documented environment placeholders. Preserve useful tutorial components selectively; replace hardcoded role/sample records incrementally. Add app/worker entrypoint scaffolding without inventing features.
 
-Acceptance: fresh checkout can install, typecheck, test, build and connect to local PostgreSQL using documented commands; migration works on clean DB; secrets absent; record licence findings. Required cases: O08, O12. Read ARCHITECTURE, OPERATIONS, DECISIONS.
+Acceptance: fresh checkout can install, typecheck, test, build and connect to local PostgreSQL using documented commands; migration works on clean DB; secrets absent; record licence findings. Required cases: O08, O12. Read ARCHITECTURE, OPERATIONS, DECISIONS and SCALE. Establish a reproducible capacity-test profile and metrics baseline without claiming million-student testing has passed.
 
 ## 02 — Identity and tenant isolation
 
@@ -42,7 +42,7 @@ Acceptance: zero automatic presence; teacher/student/guardian/admin flows tested
 
 Dependencies: 06. Transactional outbox/jobs, worker leases/retries, inbox, scoped SSE replay/polling, reconnect and restricted offline queue. Add delivery adapters only if configured.
 
-Acceptance: worker crash/retry yields one business effect; committed events recover after disconnect; revoked users receive no further protected data; pending offline changes visibly conflict after timetable change. Required cases: R01–R10, T06, T14. Do not claim full offline marks/payments. Read ARCHITECTURE and TESTING.
+Acceptance: worker crash/retry yields one business effect; committed events recover after disconnect; revoked users receive no further protected data; pending offline changes visibly conflict after timetable change. Required cases: R01–R10, T06, T14, S01–S03. Do not claim full offline marks/payments. Read ARCHITECTURE and TESTING.
 
 ## 08 — Private resources and moderated forums
 
@@ -58,9 +58,9 @@ Acceptance: physical/digital assignments work; retry/resubmit/deadline cases pas
 
 ## 10 — Assessments and report cards
 
-Dependencies: 09. Versioned grading schemes, explicit mark states, submission/review/approval, deterministic calculation, report snapshots and PDF jobs.
+Dependencies: 09. Versioned grading schemes, explicit mark states, submission/review/approval, deterministic calculation, report snapshots, school-approved externally designed DOCX templates, placeholder validation and isolated DOCX-to-PDF conversion jobs. Add per-student batch progress/retry, ZIP/merged-PDF exports and optional staff-only editable DOCX. No browser report designer. Read REPORT-CARDS and SCALE.
 
-Acceptance: independent calculation fixtures match; permissions/revisions/publication gates pass; printed artifacts visually verified; parents cannot see drafts. Required cases: A01–A10. Workflow W07. Resolve school grading rules before pilot publication.
+Acceptance: independent calculation fixtures match; permissions/revisions/publication gates pass; two school template layouts and printed artifacts visually verified; whole-class batches resume safely, maintain fixed inputs and avoid duplicate publication; parents cannot see drafts or class archives. Required cases: A01–A18, S03–S04. Workflow W07. Resolve school grading rules before pilot publication.
 
 ## 11 — Fees and manual payments
 
@@ -78,7 +78,7 @@ Acceptance: provider sandbox proves pending/failed/duplicate/late/reordered/mism
 
 Dependencies: 11 for core pilot, 12 only if online collection is enabled. Custom domains, TLS lifecycle, production Compose/process configuration, monitoring, backups/recovery, migration/deploy runbooks, capacity checks, accessible responsive UI and school pilot review.
 
-Acceptance: verified custom domain and fallback work; spoofed host fails; restore drill and worker recovery pass; critical isolation/flow tests pass on VPS; production/legal/policy blockers documented. Required cases: T08–T09, O05–O11, O14–O15. Workflow W10 and OPERATIONS. Production deployment needs a deployment task and actual credentials, not this roadmap alone.
+Acceptance: verified custom domain and fallback work; spoofed host fails; restore drill and worker recovery pass; critical isolation/flow tests pass on VPS; production/legal/policy blockers documented. Required cases: T08–T09, O05–O11, O14–O15, S01–S08. Record measured capacity and staged growth recommendations from SCALE; do not advertise an untested million-student deployment. Workflow W10 and OPERATIONS. Production deployment needs a deployment task and actual credentials, not this roadmap alone.
 
 ## Scope control
 

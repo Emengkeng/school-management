@@ -6,6 +6,8 @@ These documents are the implementation contract. They describe planned behaviour
 |---|---|
 | [PRODUCT.md](PRODUCT.md) | Scope, users, module boundaries and rollout priorities |
 | [ARCHITECTURE.md](ARCHITECTURE.md) | Components, transactions, realtime, storage and technical decisions |
+| [REPORT-CARDS.md](REPORT-CARDS.md) | School-supplied DOCX templates, bulk exports and print workflow |
+| [SCALE.md](SCALE.md) | Million-student design target, capacity gates and staged infrastructure |
 | [DATA-MODEL.md](DATA-MODEL.md) | Entities, relationships, constraints and history |
 | [SECURITY-TENANCY.md](SECURITY-TENANCY.md) | School isolation, identity, permissions and domains |
 | [WORKFLOWS.md](WORKFLOWS.md) | Ordered school, teaching, parent, academic and finance flows |

@@ -75,6 +75,19 @@ This is a living register, not a claim that every possible case is known. Each r
 | A09 | Draft report accessed by parent | Deny unpublished documents and alternate download paths |
 | A10 | Teacher edits after submission/approval | Controlled reopen; approvals invalidated; full revision trail |
 
+## Report templates and batch generation
+
+| ID | Scenario | Handling and required verification |
+|---|---|---|
+| A11 | Supplied PDF/image or unsupported document | Use as design reference; prepare approved DOCX, no automatic fidelity promise |
+| A12 | Broken/unknown placeholders, subject loop or required field | Reject activation/generation with safe actionable errors; no silently blank marks |
+| A13 | Template/font/renderer changes mid-batch | Pin versions/inputs; new batch/revision required; preserve old artifacts |
+| A14 | Conversion timeout, malformed or hostile document | Isolated restricted converter, bounded resources, validate output, quarantine failures |
+| A15 | Batch partially fails, repeats or is cancelled | Per-student status/retry, stable IDs, fixed roster; explicit partial export manifest |
+| A16 | Duplicate names/oversized class archive | Stable filenames/IDs, safe paths, bounded streamed or background archives |
+| A17 | Parent accesses class ZIP or editable export | Deny; only their child's published permitted artifact; audit staff exports |
+| A18 | Edited DOCX differs from stored academic record | External edits do not sync; approved snapshot/revision remains authoritative |
+
 ## Fees and payments
 
 | ID | Scenario | Handling and required verification |
@@ -115,6 +128,19 @@ This is a living register, not a claim that every possible case is known. Each r
 | O13 | Staff error or malicious privileged edit | Least privilege, review separation, append-only financial/academic revisions |
 | O14 | Expired export URL or CSV formula injection | Expiring authorised downloads and spreadsheet-safe export values |
 | O15 | Suspension locks out essential records | Defined school read-only/export grace policy; no automatic destruction |
+
+## Scale and workload
+
+| ID | Scenario | Handling and required verification |
+|---|---|---|
+| S01 | Million records confused with concurrent users | Benchmark explicit workload/hardware; no unsupported capacity statement |
+| S02 | Large school query or DB pools overwhelm primary | Cursor pagination, scoped indexes, bounded pools/timeouts; skew/load tests |
+| S03 | Large tenant/report batch starves school-day updates | Separate heavy queues, fair per-school concurrency and backpressure tests |
+| S04 | Billions of attendance/history rows | Measured volume, retention/partition/archive plan; query/restore benchmark |
+| S05 | Multiple app nodes miss events or use local files | Shared private storage and per-instance replay/fanout; cross-node reconnect test |
+| S06 | Replica lag exposes stale permissions or financial state | Authoritative primary for critical checks/read-after-write; lag tests |
+| S07 | Tenant migrates database while jobs/callbacks run | Validated placement/cutover, reconciliation and recovery path; no duplicate effects |
+| S08 | Growth exceeds backup/restore/failover budget | Measure full recovery at target size; change infrastructure before promising SLA |
 
 ## Adding a case
 

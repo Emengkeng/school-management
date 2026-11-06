@@ -12,7 +12,7 @@ Logical design, not a generated migration. Use UUID identifiers, UTC timestamps,
 | Learning | subject_spaces, materials, material_versions, file_objects, threads, posts, moderation_actions; subject audience tied to enrolment and assignment |
 | Assignments | assignments, assignment_versions, submissions, submission_versions, feedback; deadline/version and physical/digital submission explicit |
 | Messages | conversations, participants, messages, acknowledgement_requests, acknowledgements; recipients verified server-side; access follows policy and membership |
-| Academics | assessment_schemes, assessments, mark_entries, mark_revisions, result_batches, result_approvals, report_snapshots; mark states include missing, exempt, absent and numeric |
+| Academics | assessment_schemes, assessments, mark_entries, mark_revisions, result_batches, result_approvals, report_snapshots, report_templates, report_template_versions, report_template_assignments, report_generation_batches, report_generation_items, report_artifacts; mark states include missing, exempt, absent and numeric |
 | Finance | fee_schedules, invoices, invoice_lines, adjustments, payments, payment_allocations, receipts, refunds, provider_events, reconciliation_runs; immutable posted transactions and compensating entries |
 | Modules | feature_definitions, plan_entitlements, school_feature_settings, rollout_rules, feature_changes; effective dates and dependencies |
 | Delivery | outbox_events, jobs, notification_inbox, delivery_attempts, processed_operations, audit_events; unique effect keys and audience scope |
@@ -34,6 +34,10 @@ Posted refunds/reversals preserve the original payment and reverse appropriate a
 ## Academic history
 
 Version assessment rules before marks entry. Published reports store immutable snapshots of inputs, formula/version, rounding, comments, student/class labels and approvers. Revisions create a new publication linked to the previous one. Ranking, ties, exemptions and missing marks need a policy; do not invent defaults that silently penalise students.
+
+Template versions are school-owned private documents with content hash, placeholder schema, renderer/font requirements and school approval. Scoped assignments choose a single approved version per class/period. Batch items bind roster, result snapshot and template version; unique identities prevent duplicate generation/publication. Artifact manifests record output formats/hashes and per-student status. External DOCX edits never mutate marks. See REPORT-CARDS.
+
+High-volume attendance/audit/events need measured index, partition, retention and archival plans. Use bounded queries and keep school ownership explicit for future placement. See SCALE; partitioning/sharding is not already implemented.
 
 ## Migrations and retention
 

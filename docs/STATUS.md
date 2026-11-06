@@ -6,6 +6,12 @@ Last updated: 2026-11-06.
 
 Planning documentation is complete for the agreed initial scope. No application code, dependencies, database schema or runtime configuration was changed in this documentation task. The starter frontend remains a tutorial scaffold. The completed branch was inspected as a presentation reference; it has sample data, hardcoded roles, placeholder sign-in and non-persisting forms.
 
+## Latest scope clarification
+
+Report cards use school-supplied or assisted externally designed DOCX templates, approved before use. Teachers/class heads enter marks; authorised staff review and mass-generate individual DOCX/PDF, class ZIP and optional merged print PDF. No in-browser report designer is required. See REPORT-CARDS.
+
+The long-term target is millions of student records. SCALE distinguishes data volume/concurrency, defines bounded operations and a measured path beyond a single VPS. No large-scale runtime test has been performed and no capacity guarantee is made. Implementation steps remain unstarted.
+
 ## Progress
 
 | Step | Status | Evidence / next requirement |
@@ -33,4 +39,4 @@ No essential blocker prevents step 01. Resolve supported versions and inherited 
 
 ## Documentation verification
 
-Passed: all local Markdown links resolve; fences are balanced; 84 edge-case IDs are unique; all 13 roadmap steps are ordered; `git diff --check` is clean. Git scope inspection confirms only README, AGENTS.md and docs Markdown changed. Commit/push verification is reported in the task handoff. No application tests are claimed or needed for documentation-only edits. Critical code/DB/browser/VPS checks remain unimplemented and unrun.
+Passed: all local Markdown links resolve; fences are balanced; 100 edge-case IDs are unique; all 13 roadmap steps are ordered; `git diff --check` is clean. Git scope inspection confirms only documentation changed. Commit/push verification is reported in the task handoff. No application tests are claimed or needed for documentation-only edits. Critical code/DB/browser/VPS checks remain unimplemented and unrun.

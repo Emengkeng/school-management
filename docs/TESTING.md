@@ -12,6 +12,12 @@
 
 Use unit/integration and browser tools appropriate to the chosen versions (planned Vitest and Playwright). Do not write tests that merely repeat implementation details. Exact commands are added when the toolchain exists.
 
+## Template and capacity evidence
+
+Step 10 must verify externally designed templates, placeholder/loop errors, pinned fonts/conversion fidelity, bulk progress/retry, fixed batch inputs and parent exclusion from class archives. See REPORT-CARDS.
+
+Capacity tests follow SCALE: distinguish total students from concurrency, measure realistic attendance volume and skew, bound DB pools, prove per-school job fairness, and test report bursts separately from interactive traffic. Record hardware/dataset/tool/revision and p95/p99/errors. A single-VPS smoke test cannot substantiate millions-of-students capacity. Required scale cases are S01–S08.
+
 ## Required synthetic fixtures
 
 School A and B; user teacher in A/guardian in B; unrelated guardians; revoked guardian; departed teacher; authorised substitute; student with subject combination; student transfer; partially paid invoice; overpayment; missing versus zero mark; disabled module; verified and unverified hostname. Include a third unauthenticated actor and a restricted runtime database role.

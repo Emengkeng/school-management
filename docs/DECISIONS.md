@@ -17,6 +17,9 @@ Accepted planning decisions are requirements for implementation, not statements 
 | D11 | Subdomains first; verified custom domains later | Early tenant operation without premature certificate complexity |
 | D12 | Keep current starter branch; completed is UI reference | Avoid merging tutorial assumptions into production foundation |
 
+| D13 | Externally prepared, approved DOCX report templates | No browser designer; marks populate versioned templates, PDF for print and optional staff DOCX |
+| D14 | Million-student design goal with measured staged growth | Bounded queries/jobs, portable runtime and future infrastructure path; no unverified capacity guarantee |
+
 ## Resolve in the specified step
 
 | Question | Timing | Default until resolved |
@@ -31,6 +34,8 @@ Accepted planning decisions are requirements for implementation, not statements 
 | Provider, merchant ownership, settlement and refund responsibilities | 12 | Online collection off; no custody/pooled balances |
 | Retention, consent/legal basis and school agreements | Before real data pilot | No claim of legal compliance; local verification required |
 | Measured VPS size, recovery objectives and alert contacts | 13 | Targets in OPERATIONS are proposals; no capacity/SLA promise |
+| Report template engine, permitted placeholders and licensed fonts | 10 | No arbitrary format fidelity or paid-module assumption; school approves actual print output |
+| Capacity workload, concurrency and required availability | 01 baseline, measured through 13 | Millions of records is a target; no invented production SLA |
 | Paid plans and commercial feature bundles | Before commercial billing | Manually assigned audited pilot entitlements |
 
 Record new decisions with date, alternatives, tradeoffs and affected documents. Material changes to isolation, persistence, authentication or financial ownership require an explicit decision update rather than an incidental package addition.

@@ -34,6 +34,12 @@ Deferred extensions: admissions portal, transport, boarding, library, inventory 
 
 Parent visibility is not notification spam. Lesson events update timelines; absence alerts and urgent changes have school-approved notification rules. Guardians may acknowledge/explain; explanations require review before changing school records.
 
+## School-designed reports and scale
+
+Report cards use externally prepared, school-approved templates, initially DOCX, filled from approved marks and exported as individual/bulk DOCX and print PDFs. No in-browser report designer is required. See REPORT-CARDS.
+
+Millions of student records is the long-term design goal; concurrent usage and event volume must be measured separately. A single VPS is a pilot topology, with staged growth in SCALE. Do not claim demonstrated million-student capacity before benchmark evidence.
+
 ## Pilot and success
 
 Pilot one consenting school with at least two classes and a second synthetic tenant for isolation tests. Agree responsibility for lesson updates, moderation, absence escalation and account correction. Measure register completeness, teacher time, guardian activation, sync delay, unresolved corrections and payment reconciliation accuracy. Do not claim nationwide school practices without validating them.
