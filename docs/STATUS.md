@@ -12,6 +12,8 @@ Report cards use school-supplied or assisted externally designed DOCX templates,
 
 The long-term target is millions of student records. SCALE distinguishes data volume/concurrency, defines bounded operations and a measured path beyond a single VPS. No large-scale runtime test has been performed and no capacity guarantee is made. Implementation steps remain unstarted.
 
+Proper role management now has a dedicated permission/delegation/scope specification, including registrar and class-head roles. Permanent global student identity is separate from school-owned profiles; platform matricules remain stable on authorised transfers and appear on reports. National and school-local identifiers remain separate. See ROLE-MANAGEMENT and STUDENT-IDENTITY. The data model and steps 02–03/10 were updated; this is still documentation only.
+
 ## Progress
 
 | Step | Status | Evidence / next requirement |
@@ -39,4 +41,4 @@ No essential blocker prevents step 01. Resolve supported versions and inherited 
 
 ## Documentation verification
 
-Passed: all local Markdown links resolve; fences are balanced; 100 edge-case IDs are unique; all 13 roadmap steps are ordered; `git diff --check` is clean. Git scope inspection confirms only documentation changed. Commit/push verification is reported in the task handoff. No application tests are claimed or needed for documentation-only edits. Critical code/DB/browser/VPS checks remain unimplemented and unrun.
+Passed: all local Markdown links resolve; fences are balanced; 120 edge-case IDs are unique; all 13 roadmap steps are ordered; `git diff --check` is clean. Git scope inspection confirms only documentation changed. Commit/push verification is reported in the task handoff. No application tests are claimed or needed for documentation-only edits. Critical code/DB/browser/VPS checks remain unimplemented and unrun.

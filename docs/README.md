@@ -8,6 +8,8 @@ These documents are the implementation contract. They describe planned behaviour
 | [ARCHITECTURE.md](ARCHITECTURE.md) | Components, transactions, realtime, storage and technical decisions |
 | [REPORT-CARDS.md](REPORT-CARDS.md) | School-supplied DOCX templates, bulk exports and print workflow |
 | [SCALE.md](SCALE.md) | Million-student design target, capacity gates and staged infrastructure |
+| [ROLE-MANAGEMENT.md](ROLE-MANAGEMENT.md) | Scoped/custom roles, delegation, separation of duty and revocation |
+| [STUDENT-IDENTITY.md](STUDENT-IDENTITY.md) | Global matricules, national identifiers, linking and authorised transfers |
 | [DATA-MODEL.md](DATA-MODEL.md) | Entities, relationships, constraints and history |
 | [SECURITY-TENANCY.md](SECURITY-TENANCY.md) | School isolation, identity, permissions and domains |
 | [WORKFLOWS.md](WORKFLOWS.md) | Ordered school, teaching, parent, academic and finance flows |

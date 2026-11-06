@@ -9,6 +9,7 @@ Read [docs/README.md](docs/README.md), [docs/STATUS.md](docs/STATUS.md), and [do
 - Implement only the next eligible roadmap step unless the user explicitly selects a different scope. Finish dependencies first.
 - Do not add managed-service dependencies, payment providers, public hosting, or deployments without a task that needs them. Open-source libraries are allowed; keep the runtime portable.
 - Preserve tenant isolation, relationship permissions, audit history and transactional integrity. Neither a hostname nor a role label alone grants access.
+- Read docs/ROLE-MANAGEMENT.md and docs/STUDENT-IDENTITY.md before changing identity, roles, student intake or transfers. Global matricule uniqueness does not grant cross-school record access.
 - Never use production/student data in fixtures, logs or screenshots. Do not commit secrets.
 - Follow current official documentation when selecting dependency versions. Existing Next.js 14.2.5 is inherited tutorial state, not an approved production baseline.
 - Do not rewrite git history or change default branch merely to implement this plan.

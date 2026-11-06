@@ -11,7 +11,7 @@ Access requires: active school + valid membership/relationship + purchased entit
 | Permission | School role/scope administration | Bursar can post receipts |
 | Temporary rollout | Platform release management | New report renderer enabled for pilot school |
 
-Security, tenancy, audits and essential recovery cannot be disabled as paid features. Runtime failures must not grant access. Log reasons safely so admins can distinguish missing setup, permission, entitlement or disabled module.
+Security, tenancy, permanent student identity integrity, permission management, audits and essential recovery cannot be disabled as paid features. Runtime failures must not grant access. Log reasons safely so admins can distinguish missing setup, permission, entitlement or disabled module.
 
 ## Initial catalogue
 

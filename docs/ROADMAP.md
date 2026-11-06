@@ -10,15 +10,15 @@ Acceptance: fresh checkout can install, typecheck, test, build and connect to lo
 
 ## 02 — Identity and tenant isolation
 
-Dependencies: 01. Implement maintained local auth, sessions, school/membership registry, permissions, verified platform subdomain resolution, restricted DB roles/RLS and audit. Initial tenant/owner bootstrap must be operator-controlled.
+Dependencies: 01. Implement maintained local auth, sessions, school/membership registry, scoped custom role management and protected global student identity/matricule registry, permissions, verified platform subdomain resolution, restricted DB roles/RLS and audit. Initial tenant/owner bootstrap must be operator-controlled.
 
-Acceptance: two-school fixtures prove isolation through actual database role and server endpoints; invite/recovery/session revocation work; host spoofing and missing context fail; pooled connection tests pass. Required cases: T01–T07, T10–T15. Read SECURITY-TENANCY and DATA-MODEL. Custom domains remain unavailable.
+Acceptance: two-school fixtures prove isolation through actual database role and server endpoints; invite/recovery/session revocation work; host spoofing and missing context fail; pooled connection tests pass. Required cases: T01–T07, T10–T15, P01–P08, I01–I04. Read SECURITY-TENANCY, ROLE-MANAGEMENT, STUDENT-IDENTITY and DATA-MODEL. Verify global matricule uniqueness/collision retries and deny ID-only record access. Custom domains remain unavailable.
 
 ## 03 — School setup and enrolment
 
-Dependencies: 02. Academic years/terms, classes/subjects/groups, staff assignment, student records, guardian invitations/links, imports and school branding/language. Scope supervisors and finance roles explicitly.
+Dependencies: 02. Academic years/terms, classes/subjects/groups, staff assignment, student records, guardian invitations/links, imports and school branding/language. Scope supervisors, registrars, class heads and finance roles explicitly. Implement controlled existing-identity linking, permanent matricules, national/local identifier namespaces, duplicate review and authorised school transfers/record manifests per STUDENT-IDENTITY.
 
-Acceptance: admin configures a school and previews/imports synthetic data with duplicates/errors; guardians see only authorised children; transfers preserve history. Required cases: L05, L18, O03–O04. Workflow W01.
+Acceptance: admin configures a school and previews/imports synthetic data with duplicates/errors; guardians see only authorised children; transfers preserve history. Required cases: L05, L18, O03–O04, I01–I12. Workflows W01 and W01b. Prove A→B transfer retains matricule without exposing A records or automatically copying guardians.
 
 ## 04 — Capability controls
 
@@ -60,7 +60,7 @@ Acceptance: physical/digital assignments work; retry/resubmit/deadline cases pas
 
 Dependencies: 09. Versioned grading schemes, explicit mark states, submission/review/approval, deterministic calculation, report snapshots, school-approved externally designed DOCX templates, placeholder validation and isolated DOCX-to-PDF conversion jobs. Add per-student batch progress/retry, ZIP/merged-PDF exports and optional staff-only editable DOCX. No browser report designer. Read REPORT-CARDS and SCALE.
 
-Acceptance: independent calculation fixtures match; permissions/revisions/publication gates pass; two school template layouts and printed artifacts visually verified; whole-class batches resume safely, maintain fixed inputs and avoid duplicate publication; parents cannot see drafts or class archives. Required cases: A01–A18, S03–S04. Workflow W07. Resolve school grading rules before pilot publication.
+Acceptance: independent calculation fixtures match; permissions/revisions/publication gates pass; two school template layouts and printed artifacts visually verified; whole-class batches resume safely, maintain fixed inputs and avoid duplicate publication; parents cannot see drafts or class archives. Required cases: A01–A18, I10, S03–S04. Workflow W07. Resolve school grading rules before pilot publication.
 
 ## 11 — Fees and manual payments
 

@@ -55,7 +55,7 @@ Share session state, file access and compatible application/config versions acro
 
 ## Shard-readiness without premature sharding
 
-Use globally unique IDs and school-scoped keys; never create business relationships across schools' record sets. Keep tenant resolution behind a server-side context that can later include validated database placement. A global account/membership directory needs an explicit consistency model before schools move to separate databases; don't duplicate membership/permissions without a revocation strategy.
+Use globally unique IDs and school-scoped keys; never create business relationships across schools' record sets. Keep tenant resolution behind a server-side context that can later include validated database placement. A global student identity/matricule registry remains the authority for issuance/uniqueness across shards; shard-local constraints alone do not suffice. Transfers share approved snapshots through orchestration rather than cross-database joins. A global account/membership directory needs an explicit consistency model before schools move to separate databases; don't duplicate membership/permissions without a revocation strategy.
 
 Future tenant migration: freeze or capture writes → copy school-scoped rows/files and history → verify constraints/counts/hashes/financial totals → catch up changes → atomically switch placement → reconnect jobs/live clients → monitor → retain recovery path. Reconcile provider callbacks and queued jobs against current placement. This is a future migration design, not implemented routing or a promise of effortless sharding.
 

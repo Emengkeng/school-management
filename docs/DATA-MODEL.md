@@ -4,9 +4,11 @@ Logical design, not a generated migration. Use UUID identifiers, UTC timestamps,
 
 | Area | Principal entities and invariants |
 |---|---|
-| Platform | users, sessions, schools, school_domains, memberships, permission_grants, operator_access_grants; hostnames globally unique; school membership unique per user/school |
+| Platform | users, sessions, schools, school_domains, memberships, role_definitions, role_permissions, role_assignments, permission_grants, operator_access_grants; hostnames globally unique; school membership unique per user/school |
 | Configuration | academic_years, terms, campuses, levels, classes, subjects, grading_policy_versions; avoid overlapping active periods unless explicitly supported |
-| People | students, staff_profiles, guardian_links, enrolments; students belong to school; user login optional; enrolments and links effective-dated |
+| Global student identity | student_identities, external_student_identifiers, identity_claims, identity_aliases, identity_reviews; globally unique stable platform matricule, restricted identity registry |
+| People | school_student_profiles, staff_profiles, guardian_links, enrolments; school-owned profile linked to approved global identity; user login optional; enrolments/links effective-dated |
+| Transfers | student_transfers, transfer_approvals, transfer_record_grants, transfer_manifest_items; cross-school orchestration explicitly authorised, historical snapshots minimally shared |
 | Teaching | teaching_groups, group_enrolments, teacher_assignments, timetable_versions, timetable_rules, calendar_exceptions, lesson_occurrences; occurrence identity unique per rule/date/version strategy |
 | Attendance | attendance_records, attendance_revisions, absence_explanations; one current status per student/attendance session; distinguish school-day and lesson sessions |
 | Learning | subject_spaces, materials, material_versions, file_objects, threads, posts, moderation_actions; subject audience tied to enrolment and assignment |
@@ -21,7 +23,7 @@ Logical design, not a generated migration. Use UUID identifiers, UTC timestamps,
 
 Composite references enforce same-school relationships (for example school/class, school/student and school/assessment). Validate term belongs to year, assessment belongs to subject/group, student was eligible for that dated session, and allocation currency matches invoice/payment. Index common school/date/status and school/user lookups; test real query plans before adding broad indexes.
 
-User account identity is global; a student profile is school-owned. Do not merge children solely by matching names, phone numbers or email. Cross-school academic records are not automatically shared. Guardian balances are computed only from linked authorised student accounts.
+User account identity and permanent student identity are global; each school student profile, enrolment and school record remains tenant-owned. Platform matricule has a database-wide unique constraint and remains unchanged on transfer. Identity number lookup does not authorise access; use controlled identity linking and approved record grants. Do not merge children solely by names, phone numbers or email. Official national matricule and school admission number are separate namespaces. See STUDENT-IDENTITY for concurrency, collisions, duplicate-person review, aliases and transfer finalisation. Guardian balances are computed only from linked authorised student accounts.
 
 ## Money
 

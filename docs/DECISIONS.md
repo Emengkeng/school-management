@@ -20,6 +20,10 @@ Accepted planning decisions are requirements for implementation, not statements 
 | D13 | Externally prepared, approved DOCX report templates | No browser designer; marks populate versioned templates, PDF for print and optional staff DOCX |
 | D14 | Million-student design goal with measured staged growth | Bounded queries/jobs, portable runtime and future infrastructure path; no unverified capacity guarantee |
 
+| D15 | Scoped school-managed roles and constrained delegation | Explicit registrar/class-head/finance/publisher powers; no role-name-only authorisation |
+| D16 | Permanent global platform matricule plus tenant-owned school profiles | Identity follows student; transfers retain ID with authorised record grants and provenance |
+| D17 | National/local matricules are separate identifier namespaces | Do not impersonate government issuance or assume UB cross-institution portability |
+
 ## Resolve in the specified step
 
 | Question | Timing | Default until resolved |
@@ -36,6 +40,7 @@ Accepted planning decisions are requirements for implementation, not statements 
 | Measured VPS size, recovery objectives and alert contacts | 13 | Targets in OPERATIONS are proposals; no capacity/SLA promise |
 | Report template engine, permitted placeholders and licensed fonts | 10 | No arbitrary format fidelity or paid-module assumption; school approves actual print output |
 | Capacity workload, concurrency and required availability | 01 baseline, measured through 13 | Millions of records is a target; no invented production SLA |
+| Identity evidence, transfer approval/appeal policy and official-number verification | 02–03 before live linking | Restricted exact lookup, no ID-only claim or automatic history release |
 | Paid plans and commercial feature bundles | Before commercial billing | Manually assigned audited pilot entitlements |
 
 Record new decisions with date, alternatives, tradeoffs and affected documents. Material changes to isolation, persistence, authentication or financial ownership require an explicit decision update rather than an incidental package addition.

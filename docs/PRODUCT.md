@@ -34,6 +34,12 @@ Deferred extensions: admissions portal, transport, boarding, library, inventory 
 
 Parent visibility is not notification spam. Lesson events update timelines; absence alerts and urgent changes have school-approved notification rules. Guardians may acknowledge/explain; explanations require review before changing school records.
 
+## Student continuity and role management
+
+Each verified student receives a permanent platform matricule unique across the database and retained through participating-school transfers. Keep official national matricules and school-local numbers separately. Source-school records stay isolated; authorised transfers share selected historical snapshots with provenance. See STUDENT-IDENTITY.
+
+School-managed custom/scoped roles distinguish registrar, class head, teacher, academic reviewer, publisher, bursar and administrator; delegation cannot grant platform powers or bypass relationships. See ROLE-MANAGEMENT.
+
 ## School-designed reports and scale
 
 Report cards use externally prepared, school-approved templates, initially DOCX, filled from approved marks and exported as individual/bulk DOCX and print PDFs. No in-browser report designer is required. See REPORT-CARDS.

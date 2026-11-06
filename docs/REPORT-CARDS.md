@@ -8,7 +8,7 @@ There is no browser-based report-card designer in the baseline. Schools supply t
 
 Use DOCX as the initial programmable template format, prepared in Word or LibreOffice Writer. An arbitrary supplied PDF/image is a design reference, not automatically a usable template: prepare an approved DOCX equivalent or explicitly scope a later rendering adapter. Avoid promising pixel-identical conversion from every format.
 
-Define a small documented placeholder schema for student identity, school/year/term, repeated subject rows, mark states, coefficients, totals, averages, comments and approval labels. Choose and pin the actual template engine in step 10 after checking licence, supported loops and optional paid modules. Basic table/text generation must not require a hosted document API. Embedded static logos/signatures can be prepared within the approved template; do not assume dynamic images are free in every engine.
+Define a small documented placeholder schema for required permanent platform matricule, optional distinctly labelled national/school matricules, student identity, school/year/term, repeated subject rows, mark states, coefficients, totals, averages, comments and approval labels. Choose and pin the actual template engine in step 10 after checking licence, supported loops and optional paid modules. Basic table/text generation must not require a hosted document API. Embedded static logos/signatures can be prepared within the approved template; do not assume dynamic images are free in every engine.
 
 The template uses computed values from the approved academic snapshot. Do not execute uploaded formulas, macros, scripts, arbitrary expressions or external data links. Unsupported placeholders fail validation rather than printing blank marks silently. Templates are private, school-owned artifacts; application users cannot substitute a template belonging to another school.
 
@@ -44,7 +44,7 @@ Headless LibreOffice on self-hosted infrastructure is the planned DOCX-to-PDF co
 
 ## Required cases and acceptance
 
-Add A11–A18 from EDGE-CASES to step 10. Verify two different school layouts, repeating rows, names with accents, many subjects, missing optional fields, invalid required placeholders, template replacement mid-batch, duplicate names, failed conversion, partial retry and cross-tenant access. School approves printed sample output before live publication. DOCX-to-PDF typography can differ from Word; reject or revise templates that do not pass that review.
+Add A11–A18 and I10 from EDGE-CASES to step 10. Verify the same platform matricule appears after a transfer and required identity fields cannot be silently blank. Verify two different school layouts, repeating rows, names with accents, many subjects, missing optional fields, invalid required placeholders, template replacement mid-batch, duplicate names, failed conversion, partial retry and cross-tenant access. School approves printed sample output before live publication. DOCX-to-PDF typography can differ from Word; reject or revise templates that do not pass that review.
 
 Technical references (check current versions at implementation):
 - https://docxtemplater.com/docs/

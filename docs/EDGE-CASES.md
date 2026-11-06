@@ -142,6 +142,36 @@ This is a living register, not a claim that every possible case is known. Each r
 | S07 | Tenant migrates database while jobs/callbacks run | Validated placement/cutover, reconciliation and recovery path; no duplicate effects |
 | S08 | Growth exceeds backup/restore/failover budget | Measure full recovery at target size; change infrastructure before promising SLA |
 
+## Scoped roles and delegation
+
+| ID | Scenario | Handling and required verification |
+|---|---|---|
+| P01 | School admin grants platform powers | Permission catalogue/delegation boundary rejects; direct endpoint test |
+| P02 | User edits held role to self-escalate | Check delegable authority/conflicts; no self-granted privileged actions |
+| P03 | Class head or teacher acts outside scope | Class/subject/campus relationship checks; multiple-role negative tests |
+| P04 | Role expires/revoked with cached session/live connection | Invalidate/revalidate and deny future work; offline replay rechecks authority |
+| P05 | Last owner demoted/deleted | Require authorised ownership handover/recovery, transaction/concurrency protection |
+| P06 | Submitter approves own refund/report under dual-control policy | Reject self-approval; verify all mutation paths |
+| P07 | Custom role removes/renames a permission used by UI | Server denies unknown/missing capability; version definition and audit changes |
+| P08 | Support/auditor role implies broad record access | Explicit restricted content/export grants only; expiry and audit test |
+
+## Permanent matricules, linking and transfers
+
+| ID | Scenario | Handling and required verification |
+|---|---|---|
+| I01 | Matricule collision/concurrent issuance or registration retry | Global unique constraint and bounded retry/idempotency; never school-scoped uniqueness |
+| I02 | Same human registered twice with different IDs | Restricted evidence-based review; unique number is not proof of one human record |
+| I03 | Typo/case/format variants or unsupported national ID | Canonical normalisation/check character, authority namespace and verified status; no silent new identity |
+| I04 | ID guessed/shared or supplied for wrong child | No ID-only access/recovery/linking; exact lookup privacy, school-bound claim and authority verification |
+| I05 | Two competing transfers or repeat completion | Versioned approval/atomic finalisation, idempotency and reviewed enrolment overlap |
+| I06 | Source school unavailable/refuses/left platform | Reviewed identity-link appeal; historical release may remain unavailable; no fabricated permission |
+| I07 | Cancelled/expired/failed transfer | No silent withdrawal/activation; clean pending grants and notification states |
+| I08 | Transfer grant expires/revoked after export | Deny future access; exported copies follow documented retention, no remote-recall claim |
+| I09 | Wrong duplicate merge/split or identity dispute | Privileged review, preserve aliases/provenance and controlled compensating correction; no automatic guardian expansion |
+| I10 | Report lacks platform matricule or displays stale/wrong one | Required snapshot field/template validation; corrections create linked edition, no silent historical rewrite |
+| I11 | Transfer copies fees/private messages/guardians by default | Exclude from default manifest; explicit separate lawful authority/reverification; source records remain isolated |
+| I12 | National identifier conflict/import claim or future shards | Unverified claims cannot reserve verified binding; central uniqueness/placement and evidence review; never reuse IDs |
+
 ## Adding a case
 
 Record ID, trigger, expected user-visible state, invariant, recovery owner and automated/manual evidence. Link the affected roadmap step. If an important policy is unresolved, disable the dependent action rather than inventing an irreversible default. No feature is complete solely because its happy path works.

@@ -12,6 +12,10 @@
 
 Use unit/integration and browser tools appropriate to the chosen versions (planned Vitest and Playwright). Do not write tests that merely repeat implementation details. Exact commands are added when the toolchain exists.
 
+## Role and permanent-identity evidence
+
+Test scoped custom roles, delegation/self-escalation, last-owner protection and revocation against P01–P08. Test globally unique matricule issuance/collisions independently from duplicate-person detection, exact lookup privacy and reviewed A→B transfers against I01–I12. Verify national/local identifiers remain distinct, source history stays private, destination guardians are reverified and report templates snapshot the stable platform matricule.
+
 ## Template and capacity evidence
 
 Step 10 must verify externally designed templates, placeholder/loop errors, pinned fonts/conversion fidelity, bulk progress/retry, fixed batch inputs and parent exclusion from class archives. See REPORT-CARDS.

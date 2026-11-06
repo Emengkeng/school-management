@@ -8,7 +8,7 @@ Application checks and PostgreSQL row-level security provide separate barriers. 
 
 RLS is defence in depth, not proof that untrusted arbitrary SQL would be safe. The trusted server establishes validated context. Restrict database connectivity and test security-definer functions, views and maintenance paths explicitly. Worker jobs access one tenant at a time; platform discovery uses narrowly scoped routines/roles rather than unrestricted school-table access in ordinary requests.
 
-Global tables (accounts, tenant registry, verified hostnames, platform subscriptions) need their own explicit access rules. Global uniqueness errors must not reveal private membership information. School-scoped uniqueness includes school ID. UUIDs reduce guessability but do not authorise access.
+Global tables (accounts, protected student identity registry, controlled transfer orchestration, tenant registry, verified hostnames, platform subscriptions) need their own explicit access rules. Global uniqueness errors must not reveal private membership information. School-scoped uniqueness includes school ID. UUIDs reduce guessability but do not authorise access.
 
 ## Authentication and membership
 
@@ -17,6 +17,12 @@ Use local database-backed sessions; secure, HttpOnly cookies, CSRF/origin protec
 A person can be teacher in A and guardian in B. Server resolution verifies both current membership and requested school for every request. Disabled memberships immediately block new actions. Remove pending offline actions from automatic sync until the account is revalidated.
 
 Guardian links are school-approved, child-specific, effective-dated and revocable. Supporting multiple guardians does not imply every guardian has identical financial, messaging or academic access. Student enrolment and staff assignment are effective-dated; preserve history after departure without granting ongoing access by default.
+
+## Student continuity and role administration
+
+A permanent global matricule identifies the same pupil across schools. It never authorises schoolwide or historical lookup. School records remain tenant-scoped; identity resolution and source-to-destination record release use narrow audited services, explicit authority, approved manifests and grant revocation. Reverify guardians at the destination; do not copy memberships automatically. Follow STUDENT-IDENTITY.
+
+ROLE-MANAGEMENT specifies custom permission bundles, scoped/effective-dated assignments, delegation limits, self-escalation prevention, last-owner protection and separation of entry/review/publishing/refunds. Roles are configurable; tenant/security restrictions are not.
 
 ## Permission examples
 
@@ -32,7 +38,7 @@ Guardian links are school-approved, child-specific, effective-dated and revocabl
 | View private conversation | Participant or explicitly authorised oversight role with disclosed policy |
 | Support access | Limited, expiring operator grant with reason and audit |
 
-Avoid requiring the original author to approve their own high-impact change. Schools can configure approval staffing, but published marks and money retain traceable review/correction workflows.
+Where dual review is configured, prevent the original author from approving their own high-impact change. Schools can configure approval staffing, but published marks and money retain traceable review/correction workflows.
 
 ## Domains
 

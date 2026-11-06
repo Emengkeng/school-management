@@ -51,6 +51,10 @@ Default private student/finance queries to uncached responses. Never place authe
 
 Store uploads with generated identifiers, school ownership, content hash, MIME, size and scan status. All preview/download routes enforce current access. Use a storage interface so local disk can later migrate to self-hosted or external S3-compatible storage. No public bucket or `public/uploads` for student material.
 
+## Global student registry and scoped roles
+
+Permanent student identity/matricule belongs to a protected global registry; school student profiles and all academic/finance records remain tenant-owned. Issue globally unique values centrally even if school databases are later split. Identity resolution and transfer grants are narrow audited services, not unrestricted cross-school repositories. See STUDENT-IDENTITY. Role definitions/assignments support school-owned custom bundles, relationship scopes and expiry; all entry points use the policy model in ROLE-MANAGEMENT.
+
 ## Report generation and scale boundaries
 
 School-approved external DOCX templates are populated from immutable result snapshots and converted to print PDF by an isolated self-hosted converter. Bulk generation is a durable, bounded worker workload with school quotas, manifests and partial-failure handling. See REPORT-CARDS; no browser report designer or hosted document API is required.

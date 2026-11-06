@@ -12,6 +12,17 @@ Each mutation follows architecture transaction/audit/outbox rules. All steps are
 7. Optionally configure a verified custom domain after its module is available.
 Failure: incomplete imports remain staged; do not publish half-valid relationships. Retried imports use stable external IDs and a reviewed duplicate policy.
 
+## W01b Global student identity and transfers
+
+1. Registrar checks existing platform matricule/verified evidence through protected identity resolution, without a public student directory.
+2. Issue a permanent globally unique matricule only for a verified new identity; uncertain matches remain provisional for review.
+3. Existing identity uses a school-bound claim/transfer request; knowing the ID does not authorise linking or history access.
+4. Verify student/guardian authority, source release manifest and destination acceptance separately; handle unavailable source through reviewed appeal.
+5. Complete approved enrolment transition idempotently, retaining the same platform matricule and source-owned history; only approved snapshots are shared.
+6. Reverify destination guardian relationships, preserve report identity and audit aliases/corrections.
+
+Follow STUDENT-IDENTITY for states, permissions, national/local numbers, concurrent requests and duplicate correction. Read ROLE-MANAGEMENT before assigning registrar/reviewer permissions.
+
 ## W02 Daily lesson and attendance
 1. Generate dated lesson occurrences from effective timetable and calendar exceptions, idempotently.
 2. Teacher views only assigned occurrences, including authorised substitutions.
